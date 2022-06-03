@@ -1,0 +1,22 @@
+
+************************************
+*                                  *
+*   Andiord Studio installation    *
+*                                  *
+************************************
+
+
+git clone https://aur.archlinux.git/anroid-studio
+
+cd android-studio
+
+makepkg -si
+
+ls *pkg tar.xyz
+andriod-studio.............tar.xz
+
+sudo pacman -U android-studio.............tar.xz
+
+android-studio
+
+**********************************************************
