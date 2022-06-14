@@ -18,30 +18,39 @@ NAME      TYPE      SIZE USED PRIO
 
 
 $ sudo blkid
+
 /dev/sda3: UUID="5d825bb9-1874-42f8-9b1d-1314709da5e6" TYPE="swap" PARTUUID="e96e2512-e351-408f-9677-ad82c3e27f5e"
 Copy the UUID 
 
-$ sudo micro /etc/default/grub
-Find the line that begins with GRUB_CMDLINE_LINUX_DEFAULT and add resume= and the UUID key/value pair you copied earlier to the end of the line, but inside the quotes.
+============================================
 
+$ sudo micro /etc/default/grub
+
+Find the line that begins with GRUB_CMDLINE_LINUX_DEFAULT and add resume= and the UUID key/value pair you copied earlier to the end of the line, but inside the quotes.
 GRUB_CMDLINE_LINUX_DEFAULT="  ............................................... resume=UUID=5d825bb9-1874-42f8-9b1d-1314709da5e6"
 
-Then regenerate the GRUB config
+=============================================
+
 
 $ sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+============================================
 
 $ sudo micro /etc/mkinitcpio.conf
 
 HOOKS="base udev autodetect modconf block keyboard keymap plymouth filesystems resume"
 Note that if you see systemd in the HOOKS line, a resume mechanism is already provided, meaning that you don’t have to add the resume hook.
 
-
+=============================================
 
 $ sudo mkinitcpio -P
 Then, resume hook or not, reboot your system:
 
+=============================================
+
 $ reboot
-After the reboot, you should be able to hibernate by running the following command:
+
+=============================================
 
 $ systemctl hibernate
 
