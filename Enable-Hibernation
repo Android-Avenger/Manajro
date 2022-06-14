@@ -10,14 +10,15 @@
 locate swap partition
 
 $ swapon
+
 NAME      TYPE      SIZE USED PRIO
 /dev/sda3 partition 7,7G 4,5G   -2
 
-Next,find the UUID of the swap partition:
+=========================================
+
 
 $ sudo blkid
 /dev/sda3: UUID="5d825bb9-1874-42f8-9b1d-1314709da5e6" TYPE="swap" PARTUUID="e96e2512-e351-408f-9677-ad82c3e27f5e"
-
 Copy the UUID 
 
 $ sudo micro /etc/default/grub
