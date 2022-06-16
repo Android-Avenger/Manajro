@@ -1,0 +1,5 @@
+Add this line in settings.json
+
+"editor.quickSuggestionsDelay": 10000,
+
+(just increase the suggestion delay)
