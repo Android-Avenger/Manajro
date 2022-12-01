@@ -1,0 +1,15 @@
+rm -rf ~/.android
+rm -rf /opt/android-studio
+rm -r ~/.config/Google/AndroidStudio*
+rm -r ~/.local/share/Google/AndroidStudio*
+
+then Install 
+$ git clone https://aur.archlinux.org/android-studio
+$ cd android-studio/
+$ makepkg -s
+$ ls *pkg.tar.xz
+
+android-studio-3.2.1.0-1-x86_64.pkg.tar.xz
+
+$ sudo pacman -U --noconfirm android-studio-3.2.1.0-1-x86_64.pkg.tar.xz
+$ android-studio
